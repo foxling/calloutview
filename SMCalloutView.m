@@ -22,13 +22,13 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
 #define CALLOUT_DEFAULT_HEIGHT 70 // ...and allow only for this exact height.
 #define CALLOUT_DEFAULT_WIDTH 153 // default "I give up" width when we are asked to present in a space less than our min width
 #define TITLE_MARGIN 5 // the title view's normal horizontal margin from the edges of our callout view
-#define TITLE_TOP 10 // the top of the title view when no subtitle is present
+#define TITLE_TOP 9.5 // the top of the title view when no subtitle is present
 #define TITLE_SUB_TOP 3 // the top of the title view when a subtitle IS present
 #define TITLE_HEIGHT 22 // title height, fixed
 #define SUBTITLE_TOP 25 // the top of the subtitle, when present
 #define SUBTITLE_HEIGHT 16 // subtitle height, fixed
-#define TITLE_ACCESSORY_MARGIN 6 // the margin between the title and an accessory if one is present (on either side)
-#define ACCESSORY_MARGIN 14 // the accessory's margin from the edges of our callout view
+#define TITLE_ACCESSORY_MARGIN 0 // the margin between the title and an accessory if one is present (on either side)
+#define ACCESSORY_MARGIN 4.5 // the accessory's margin from the edges of our callout view
 #define ACCESSORY_TOP 8 // the top of the accessory "area" in which accessory views are placed
 #define ACCESSORY_HEIGHT 32 // the "suggested" maximum height of an accessory view. shorter accessories will be vertically centered
 #define BETWEEN_ACCESSORIES_MARGIN 7 // if we have no title or subtitle, but have two accessory views, then this is the space between them
