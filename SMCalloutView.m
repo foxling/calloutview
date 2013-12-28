@@ -19,7 +19,7 @@
 NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
 
 #define CALLOUT_DEFAULT_MIN_WIDTH 75 // our image-based background graphics limit us to this minimum width...
-#define CALLOUT_DEFAULT_HEIGHT 70 // ...and allow only for this exact height.
+#define CALLOUT_DEFAULT_HEIGHT 54 // ...and allow only for this exact height.
 #define CALLOUT_DEFAULT_WIDTH 153 // default "I give up" width when we are asked to present in a space less than our min width
 #define TITLE_MARGIN 5 // the title view's normal horizontal margin from the edges of our callout view
 #define TITLE_TOP 9.5 // the top of the title view when no subtitle is present
@@ -29,8 +29,8 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
 #define SUBTITLE_HEIGHT 16 // subtitle height, fixed
 #define TITLE_ACCESSORY_MARGIN 0 // the margin between the title and an accessory if one is present (on either side)
 #define ACCESSORY_MARGIN 4.5 // the accessory's margin from the edges of our callout view
-#define ACCESSORY_TOP 8 // the top of the accessory "area" in which accessory views are placed
-#define ACCESSORY_HEIGHT 32 // the "suggested" maximum height of an accessory view. shorter accessories will be vertically centered
+#define ACCESSORY_TOP 1.5 // the top of the accessory "area" in which accessory views are placed
+#define ACCESSORY_HEIGHT 40 // the "suggested" maximum height of an accessory view. shorter accessories will be vertically centered
 #define BETWEEN_ACCESSORIES_MARGIN 7 // if we have no title or subtitle, but have two accessory views, then this is the space between them
 #define ANCHOR_MARGIN 37 // the smallest possible distance from the edge of our control to the "tip" of the anchor, from either left or right
 #define TOP_ANCHOR_MARGIN 13 // all the above measurements assume a bottom anchor! if we're pointing "up" we'll need to add this top margin to everything.
@@ -40,7 +40,7 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
 #define TOP_SHADOW_BUFFER 2 // height offset buffer to account for top shadow
 #define BOTTOM_SHADOW_BUFFER 5 // height offset buffer to account for bottom shadow
 #define OFFSET_FROM_ORIGIN 5 // distance to offset vertically from the rect origin of the callout
-#define ANCHOR_HEIGHT 6 // height to use for the anchor
+#define ANCHOR_HEIGHT 5 // height to use for the anchor
 #define ANCHOR_MARGIN_MIN 24 // the smallest possible distance from the edge of our control to the edge of the anchor, from either left or right
 
 @implementation SMCalloutView {
@@ -71,9 +71,9 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
             titleLabel.opaque = NO;
             titleLabel.backgroundColor = [UIColor clearColor];
             titleLabel.font = [UIFont boldSystemFontOfSize:17];
-            titleLabel.textColor = [UIColor whiteColor];
-            titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
-            titleLabel.shadowOffset = CGSizeMake(0, -1);
+            titleLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
+//            titleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
+//            titleLabel.shadowOffset = CGSizeMake(0, -1);
         }
         return titleLabel;
     }
@@ -91,9 +91,9 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
             subtitleLabel.opaque = NO;
             subtitleLabel.backgroundColor = [UIColor clearColor];
             subtitleLabel.font = [UIFont systemFontOfSize:12];
-            subtitleLabel.textColor = [UIColor whiteColor];
-            subtitleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
-            subtitleLabel.shadowOffset = CGSizeMake(0, -1);
+            subtitleLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
+//            subtitleLabel.shadowColor = [UIColor colorWithWhite:0 alpha:0.5];
+//            subtitleLabel.shadowOffset = CGSizeMake(0, -1);
         }
         return subtitleLabel;
     }
@@ -126,7 +126,7 @@ NSTimeInterval kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
     if (self.leftAccessoryView)
         return ACCESSORY_MARGIN + self.leftAccessoryView.$width + TITLE_ACCESSORY_MARGIN;
     else
-        return TITLE_MARGIN;
+        return TITLE_MARGIN + 9;
 }
 
 - (CGFloat)innerContentMarginRight {
